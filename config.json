@@ -1,0 +1,31 @@
+{
+  "ano": null,
+  "fontes": {
+    "pib": {
+      "arquivo": "data/raw/pib_original",
+      "nome_original": "tabela5938_2020.csv.xz",
+      "sha256": "992c5e3c2a237246fbf66832f5e962d54e4a891ee8bc4947a7ad7a9a2286c542",
+      "ano": 2020,
+      "evidencia_ano": "Nome original no Content-Disposition e título do Google Drive; downloads.jsonl.",
+      "separador": ",", "decimal": ".", "encoding": "utf-8", "cabecalho": 0,
+      "unidade_monetaria": "mil_reais"
+    },
+    "populacao": {
+      "arquivo": "data/raw/populacao_original",
+      "nome_original": "tabela6579_2020.csv.xz",
+      "sha256": "358a9388fe27679f0ce2829625e2c83a75ec0cbc6ced82a8ae5a1da8c8c6a05a",
+      "ano": 2020,
+      "evidencia_ano": "Nome original no Content-Disposition e título do Google Drive; downloads.jsonl.",
+      "separador": ",", "decimal": ".", "encoding": "utf-8", "cabecalho": 0,
+      "unidade_populacao": "pessoas"
+    },
+    "dtb": {
+      "arquivo": "data/raw/dtb_original",
+      "nome_original": "RELATORIO_DTB_BRASIL_MUNICIPIO.csv",
+      "sha256": "92ee14276c0d69f1a8d16cde91b3aca9f4e506bbab98a28786935d032ba87857",
+      "ano": null,
+      "evidencia_ano": "Edição não informada no conteúdo nem no nome original; não presumir 2020.",
+      "separador": ",", "decimal": ".", "encoding": "utf-8", "cabecalho": 0
+    }
+  }
+}

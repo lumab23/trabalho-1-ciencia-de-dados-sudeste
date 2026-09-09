@@ -1,0 +1,229 @@
+{
+  "ano_selecionado": 2020,
+  "unidades": {
+    "monetarias_entrada": "mil reais",
+    "fator_conversao": 1000,
+    "monetarias_saida": "reais correntes de 2020",
+    "populacao": "pessoas",
+    "pib_per_capita": "reais por pessoa"
+  },
+  "tipos_final": {
+    "codigo_municipio": "string",
+    "municipio": "string",
+    "codigo_uf": "string",
+    "uf": "string",
+    "estado": "string",
+    "regiao": "string",
+    "ano": "Int64",
+    "pib_total_reais": "Float64",
+    "populacao": "Int64",
+    "pib_per_capita_reais": "Float64",
+    "impostos_reais": "Float64",
+    "va_agropecuaria_reais": "Float64",
+    "va_industria_reais": "Float64",
+    "va_servicos_reais": "Float64",
+    "va_administracao_publica_reais": "Float64"
+  },
+  "fontes": {
+    "pib": {
+      "arquivo": "data/raw/pib_original",
+      "bytes": 141904,
+      "sha256": "992c5e3c2a237246fbf66832f5e962d54e4a891ee8bc4947a7ad7a9a2286c542",
+      "nome_original": "tabela5938_2020.csv.xz",
+      "ano_metadados": 2020,
+      "evidencia_ano": "Nome original no Content-Disposition e título do Google Drive; downloads.jsonl.",
+      "compactacao": "xz",
+      "formato": "csv",
+      "encoding": "utf-8",
+      "separador": ",",
+      "abas": [],
+      "linhas_iniciais": [
+        "Cód.,Município,PIB (Mil Reais),Impostos (Mil Reais),VA da agropecuária (Mil Reais),VA da indústria (Mil Reais),VA dos serviços (Mil Reais),VA da administração pública (Mil Reais)",
+        "1100015,Alta Floresta D'Oeste (RO),570272.0,35109.0,203394.0,20716.0,150192.0,160860.0",
+        "1100023,Ariquemes (RO),2818049.0,295656.0,199723.0,404752.0,1207405.0,710513.0",
+        "1100031,Cabixi (RO),167190.0,7237.0,81177.0,5438.0,28667.0,44671.0"
+      ],
+      "cabecalho": 0,
+      "registros": 5570,
+      "colunas": [
+        "Cód.",
+        "Município",
+        "PIB (Mil Reais)",
+        "Impostos (Mil Reais)",
+        "VA da agropecuária (Mil Reais)",
+        "VA da indústria (Mil Reais)",
+        "VA dos serviços (Mil Reais)",
+        "VA da administração pública (Mil Reais)"
+      ],
+      "tipos_leitura": {
+        "Cód.": "string",
+        "Município": "string",
+        "PIB (Mil Reais)": "string",
+        "Impostos (Mil Reais)": "string",
+        "VA da agropecuária (Mil Reais)": "string",
+        "VA da indústria (Mil Reais)": "string",
+        "VA dos serviços (Mil Reais)": "string",
+        "VA da administração pública (Mil Reais)": "string"
+      },
+      "tipos_inferidos": {
+        "Cód.": "Int64",
+        "Município": "string",
+        "PIB (Mil Reais)": "Float64",
+        "Impostos (Mil Reais)": "Float64",
+        "VA da agropecuária (Mil Reais)": "Float64",
+        "VA da indústria (Mil Reais)": "Float64",
+        "VA dos serviços (Mil Reais)": "Float64",
+        "VA da administração pública (Mil Reais)": "Float64"
+      },
+      "vazios": {
+        "Cód.": 0,
+        "Município": 0,
+        "PIB (Mil Reais)": 0,
+        "Impostos (Mil Reais)": 0,
+        "VA da agropecuária (Mil Reais)": 0,
+        "VA da indústria (Mil Reais)": 0,
+        "VA dos serviços (Mil Reais)": 0,
+        "VA da administração pública (Mil Reais)": 0
+      },
+      "duplicatas_exatas": 0
+    },
+    "populacao": {
+      "arquivo": "data/raw/populacao_original",
+      "bytes": 55304,
+      "sha256": "358a9388fe27679f0ce2829625e2c83a75ec0cbc6ced82a8ae5a1da8c8c6a05a",
+      "nome_original": "tabela6579_2020.csv.xz",
+      "ano_metadados": 2020,
+      "evidencia_ano": "Nome original no Content-Disposition e título do Google Drive; downloads.jsonl.",
+      "compactacao": "xz",
+      "formato": "csv",
+      "encoding": "utf-8",
+      "separador": ",",
+      "abas": [],
+      "linhas_iniciais": [
+        "Cód.,Município,População (Pessoas)",
+        "1100015,Alta Floresta D'Oeste (RO),22728.0",
+        "1100023,Ariquemes (RO),109523.0",
+        "1100031,Cabixi (RO),5188.0"
+      ],
+      "cabecalho": 0,
+      "registros": 5570,
+      "colunas": [
+        "Cód.",
+        "Município",
+        "População (Pessoas)"
+      ],
+      "tipos_leitura": {
+        "Cód.": "string",
+        "Município": "string",
+        "População (Pessoas)": "string"
+      },
+      "tipos_inferidos": {
+        "Cód.": "Int64",
+        "Município": "string",
+        "População (Pessoas)": "Float64"
+      },
+      "vazios": {
+        "Cód.": 0,
+        "Município": 0,
+        "População (Pessoas)": 0
+      },
+      "duplicatas_exatas": 0
+    },
+    "dtb": {
+      "arquivo": "data/raw/dtb_original",
+      "bytes": 659542,
+      "sha256": "92ee14276c0d69f1a8d16cde91b3aca9f4e506bbab98a28786935d032ba87857",
+      "nome_original": "RELATORIO_DTB_BRASIL_MUNICIPIO.csv",
+      "ano_metadados": null,
+      "evidencia_ano": "Edição não informada no conteúdo nem no nome original; não presumir 2020.",
+      "compactacao": null,
+      "formato": "csv",
+      "encoding": "utf-8",
+      "separador": ",",
+      "abas": [],
+      "linhas_iniciais": [
+        "UF,Nome_UF,Região Geográfica Intermediária,Nome Região Geográfica Intermediária,Região Geográfica Imediata,Nome Região Geográfica Imediata,Mesorregião Geográfica,Nome_Mesorregião,Microrregião Geográfica,Nome_Microrregião,Município,Código Município Completo,Nome_Município",
+        "11,Rondônia,1102,Ji-Paraná,110005,Cacoal,02,Leste Rondoniense,006,Cacoal,00015,1100015,Alta Floresta D'Oeste",
+        "11,Rondônia,1102,Ji-Paraná,110005,Cacoal,02,Leste Rondoniense,006,Cacoal,00379,1100379,Alto Alegre dos Parecis",
+        "11,Rondônia,1101,Porto Velho,110002,Ariquemes,02,Leste Rondoniense,003,Ariquemes,00403,1100403,Alto Paraíso"
+      ],
+      "cabecalho": 0,
+      "registros": 5570,
+      "colunas": [
+        "UF",
+        "Nome_UF",
+        "Região Geográfica Intermediária",
+        "Nome Região Geográfica Intermediária",
+        "Região Geográfica Imediata",
+        "Nome Região Geográfica Imediata",
+        "Mesorregião Geográfica",
+        "Nome_Mesorregião",
+        "Microrregião Geográfica",
+        "Nome_Microrregião",
+        "Município",
+        "Código Município Completo",
+        "Nome_Município"
+      ],
+      "tipos_leitura": {
+        "UF": "string",
+        "Nome_UF": "string",
+        "Região Geográfica Intermediária": "string",
+        "Nome Região Geográfica Intermediária": "string",
+        "Região Geográfica Imediata": "string",
+        "Nome Região Geográfica Imediata": "string",
+        "Mesorregião Geográfica": "string",
+        "Nome_Mesorregião": "string",
+        "Microrregião Geográfica": "string",
+        "Nome_Microrregião": "string",
+        "Município": "string",
+        "Código Município Completo": "string",
+        "Nome_Município": "string"
+      },
+      "tipos_inferidos": {
+        "UF": "Int64",
+        "Nome_UF": "string",
+        "Região Geográfica Intermediária": "Int64",
+        "Nome Região Geográfica Intermediária": "string",
+        "Região Geográfica Imediata": "Int64",
+        "Nome Região Geográfica Imediata": "string",
+        "Mesorregião Geográfica": "Int64",
+        "Nome_Mesorregião": "string",
+        "Microrregião Geográfica": "Int64",
+        "Nome_Microrregião": "string",
+        "Município": "Int64",
+        "Código Município Completo": "Int64",
+        "Nome_Município": "string"
+      },
+      "vazios": {
+        "UF": 0,
+        "Nome_UF": 0,
+        "Região Geográfica Intermediária": 0,
+        "Nome Região Geográfica Intermediária": 0,
+        "Região Geográfica Imediata": 0,
+        "Nome Região Geográfica Imediata": 0,
+        "Mesorregião Geográfica": 0,
+        "Nome_Mesorregião": 0,
+        "Microrregião Geográfica": 0,
+        "Nome_Microrregião": 0,
+        "Município": 0,
+        "Código Município Completo": 0,
+        "Nome_Município": 0
+      },
+      "duplicatas_exatas": 0
+    }
+  },
+  "decisoes": [
+    "Ano dos arquivos originais identificado por Content-Disposition e título no Drive; não há coluna de ano nos CSVs fornecidos.",
+    "Escolha automática do maior ano comum; config.ano permite selecionar outro ano comum, nunca anos distintos.",
+    "DTB sem edição identificada: correspondência de códigos e nomes não comprova equivalência histórica de limites territoriais.",
+    "Código municipal completo tem sete dígitos. Código local de cinco dígitos da DTB não é usado como chave.",
+    "Região Sudeste derivada dos códigos de UF da DTB (31,32,33,35); regiões imediatas/intermediárias não são macrorregiões.",
+    "Códigos ausentes e chaves duplicadas interrompem o pipeline após registrar as linhas; não há deduplicação arbitrária.",
+    "PIB ausente, negativo ou não finito e população ausente, não positiva, não inteira ou não finita: exclusão auditada da base de consumo, sem imputação.",
+    "VA e impostos: ausentes/não numéricos/não finitos ficam nulos; negativos são preservados e sinalizados para revisão.",
+    "Nomes divergentes são relatados, sem cruzamento aproximado por nome; prevalece o nome da DTB.",
+    "PIB per capita é PIB dividido pela estimativa populacional do mesmo ano; não representa renda individual nem distribuição de renda.",
+    "VA dos serviços e VA da administração pública preservam os rótulos do arquivo; consultar os metadados SIDRA antes de agregar setores.",
+    "Nenhuma quantidade de municípios foi imposta; cobertura final é reconciliada com a DTB fornecida."
+  ]
+}

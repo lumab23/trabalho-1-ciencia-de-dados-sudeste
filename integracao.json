@@ -1,0 +1,9 @@
+{
+  "contribuicoes": [
+    {"autor": "Luma", "arquivo": "notebooks/01_preparacao_dados.ipynb"},
+    {"autor": "Amanda", "arquivo": "notebooks/contribuicoes/02_amanda.ipynb"},
+    {"autor": "Peter", "arquivo": "notebooks/contribuicoes/03_peter.ipynb"},
+    {"autor": "Luís", "arquivo": "notebooks/contribuicoes/04_luis.ipynb"}
+  ],
+  "saida": "notebooks/00_trabalho_integrado.ipynb"
+}
