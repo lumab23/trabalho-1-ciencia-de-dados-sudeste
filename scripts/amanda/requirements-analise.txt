@@ -1,0 +1,2 @@
+# Complemento ao requirements.txt original da equipe.
+matplotlib>=3.9,<4

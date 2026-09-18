@@ -1,0 +1,28 @@
+{
+  "status": "aprovado",
+  "ano": 2020,
+  "n": 1668,
+  "sha256_base_parquet": "26975160e61731a3ec468342e47f16cfdd42a53e2eed3c325d4ce1ffffd9b402",
+  "variancia_ddof": 0,
+  "quantis": "linear",
+  "classes_histograma": 30,
+  "nao_positivos_fora_log": 0,
+  "verificacoes": [
+    "statistics",
+    "quartis independentes",
+    "totais independentes",
+    "CSV versus Parquet",
+    "rankings e releitura",
+    "contagem histograma",
+    "hash preservado"
+  ],
+  "versoes": {
+    "pandas": "2.3.3",
+    "numpy": "2.0.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.9.4",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.2",
+    "ipykernel": "6.31.0"
+  }
+}
