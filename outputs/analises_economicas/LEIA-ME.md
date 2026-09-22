@@ -1,16 +1,16 @@
-# Parte de Peter — Sudeste, 2020
+# Parte de análises econômicas — Sudeste, 2020
 
-**Autor: João Pedro Amorim (Peter)**
+Seção de análises econômicas do Trabalho 1.
 
 ## O que abrir
 
 | Arquivo | Para que serve |
 | --- | --- |
-| [03_peter.ipynb](../../notebooks/contribuicoes/03_peter.ipynb) | Sua análise completa: código comentado, tabelas, sete gráficos e conclusões. É o arquivo que Luma integra ao notebook do grupo. |
-| [peter_notebook.pdf](peter_notebook.pdf) | A mesma seção em PDF, com código e resultados, para leitura e conferência. |
-| [peter_resultados.pptx](peter_resultados.pptx) | Seus cinco slides editáveis, para Luís inserir na apresentação final. |
+| [03_analises_economicas.ipynb](../../notebooks/contribuicoes/03_analises_economicas.ipynb) | Código comentado, tabelas, sete gráficos e conclusões parciais para o notebook do grupo. |
+| [secao_analises_economicas.pdf](secao_analises_economicas.pdf) | A mesma seção em PDF, com código e resultados, para leitura e conferência. |
+| [resultados_economicos.pptx](resultados_economicos.pptx) | Cinco slides editáveis para a apresentação final. |
 | [roteiro_apresentacao.md](roteiro_apresentacao.md) | O que falar em cada slide, em aproximadamente 2min30s, e respostas para possíveis perguntas. |
-| [Gráficos](../figures/) | Os sete arquivos PNG com prefixo `peter_`, caso o grupo queira usar as imagens separadamente. |
+| [Gráficos](../figures/) | Os sete arquivos PNG, com nomes referentes ao conteúdo de cada gráfico. |
 
 ## O que sua parte cobre
 
@@ -26,17 +26,17 @@
 Use a base Parquet que já existe no repositório. Na raiz do projeto:
 
 ```bash
-python -m pip install -r requirements.txt -r scripts/peter/requirements.txt
+python -m pip install -r requirements.txt -r scripts/analises_economicas/requirements.txt
 ```
 
-Abra `notebooks/contribuicoes/03_peter.ipynb` no Jupyter ou VS Code e execute todas as células em ordem. As figuras e tabelas são geradas automaticamente. O arquivo da base não é alterado.
+Abra `notebooks/contribuicoes/03_analises_economicas.ipynb` no Jupyter ou VS Code e execute todas as células em ordem. As figuras e tabelas são geradas automaticamente. O arquivo da base não é alterado.
 
 O `integracao.json` do grupo já indica o caminho correto dessa contribuição. A integração completa e a gravação do vídeo continuam sendo etapas coletivas.
 
 ## Dois arquivos de apoio
 
-- `scripts/peter/requirements.txt`: bibliotecas adicionais necessárias para executar a análise.
-- `outputs/peter/fontes/sidra_5938_metadados.json`: definição oficial dos setores usada para conferir que Serviços exclui Administração Pública.
+- `scripts/analises_economicas/requirements.txt`: bibliotecas adicionais necessárias para executar a análise.
+- `outputs/analises_economicas/fontes/sidra_5938_metadados.json`: definição oficial dos setores usada para conferir que Serviços exclui Administração Pública.
 
 ## Conferência e limites
 
@@ -46,4 +46,4 @@ A matriz logarítmica usa 1.666 municípios, pois Nilópolis/RJ e Águas de São
 
 As sete células de código foram executadas em ordem em um processo Python novo via IPython, com saídas registradas. O ambiente bloqueou sockets do kernel externo Jupyter, portanto esse modo de execução não foi testado aqui. Slides e PDF foram conferidos por renderização; não houve teste no aplicativo Microsoft PowerPoint.
 
-O histograma disponível na seção da Amanda foi revisado: título, unidades, escala logarítmica e legenda estavam legíveis e identificados. A seção de Luís ainda não estava na main consultada.
+O histograma disponível na seção da estatística descritiva foi revisado: título, unidades, escala logarítmica e legenda estavam legíveis e identificados. A seção de distribuição e síntese ainda não estava na main consultada.

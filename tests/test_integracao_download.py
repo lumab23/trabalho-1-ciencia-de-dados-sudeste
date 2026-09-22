@@ -9,7 +9,7 @@ from sudeste.integracao import consolidar
 
 
 def test_integracao_aguarda_contribuicao_real(tmp_path):
-    (tmp_path / "integracao.json").write_text(json.dumps({"contribuicoes": [{"autor": "Amanda", "arquivo": "ausente.ipynb"}], "saida": "final.ipynb"}))
+    (tmp_path / "integracao.json").write_text(json.dumps({"contribuicoes": [{"autor": "estatística descritiva", "arquivo": "ausente.ipynb"}], "saida": "final.ipynb"}))
     with pytest.raises(FileNotFoundError, match="contribuições reais"):
         consolidar(tmp_path)
     assert not (tmp_path / "final.ipynb").exists()

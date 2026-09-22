@@ -1,4 +1,4 @@
-# Relatório de qualidade — Luma / T326
+# Relatório de qualidade — T326
 
 Ano: 2020. Anos comuns: [2020].
 

@@ -1,23 +1,14 @@
-# Entrega das contribuições reais
+# Seções do notebook
 
-Ainda não há notebooks de Amanda, Peter ou Luís. Este diretório é o ponto de entrega:
+Este diretório reúne as seções de análise previstas para o trabalho:
 
-- Amanda: `02_amanda.ipynb`.
-- Peter: `03_peter.ipynb`.
-- Luís: `04_luis.ipynb`.
+- `02_estatistica_descritiva.ipynb`: contextualização, medidas descritivas,
+  rankings e histograma (entregue);
+- `03_analises_economicas.ipynb`: setores, comparações estaduais, correlações e
+  dispersão (entregue);
+- `04_distribuicao_sintese.ipynb`: distribuição, boxplot, assimetria, curtose e
+  conclusão geral (pendente).
 
-Cada notebook deve carregar `data/processed/sudeste_municipios.parquet` por caminho
-relativo à raiz, usar somente variáveis documentadas e declarar dependências novas.
-Deve conter objetivo, código, explicações e resultados realmente executados; não
-usar caminhos pessoais nem depender de células executadas fora de ordem. Não
-modificar a base tratada no arquivo; faça cópias em memória quando necessário.
-Salve figuras sob `outputs/figures/` com nomes distintos para cada integrante.
-
-Luma deve revisar as contribuições, ajustar a ordem editorial em `integracao.json`,
-executar `python -m sudeste.integracao`, resolver eventuais conflitos e rodar
-`python -m sudeste.notebook notebooks/00_trabalho_integrado.ipynb` em kernel novo.
-O script remove saídas antigas no consolidado; resultados só reaparecem com execução.
-Se um arquivo faltar, a consolidação para com uma mensagem e não gera um notebook
-parcial com seções fictícias. Se o consolidado já existir, escolha outro destino
-no manifesto para preservar a versão anterior. Revise texto, gráficos, fontes e
-conclusões antes da exportação final para PDF. Slides e vídeo dependem de Luís.
+Cada seção lê `data/processed/sudeste_municipios.parquet` a partir da raiz do
+projeto. O arquivo `integracao.json` define a ordem de consolidação. A integração
+completa e a revisão técnica devem ocorrer após a entrega de todas as seções.

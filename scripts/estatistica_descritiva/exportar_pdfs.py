@@ -22,7 +22,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 import matplotlib
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'outputs/amanda'
+OUT = ROOT / 'outputs/estatistica_descritiva'
 WIDTH = A4[0] - 88
 FONT_DIR = Path(matplotlib.get_data_path()) / 'fonts/ttf'
 for name, filename in [('Body', 'DejaVuSans.ttf'), ('BodyBold', 'DejaVuSans-Bold.ttf'),
@@ -116,18 +116,18 @@ def md_flow(text):
 def footer(canvas, doc):
     canvas.setFont('Body', 7)
     canvas.setFillColor(colors.HexColor('#555555'))
-    canvas.drawString(44, 25, 'Amanda - T326 - Sudeste - 2020')
+    canvas.drawString(44, 25, 'estatística descritiva - T326 - Sudeste - 2020')
     canvas.drawRightString(A4[0] - 44, 25, str(doc.page))
 
 
 def build_pdf(path, story, title):
     SimpleDocTemplate(str(path), pagesize=A4, rightMargin=44, leftMargin=44,
-        topMargin=38, bottomMargin=42, title=title, author='Amanda').build(
+        topMargin=38, bottomMargin=42, title=title, author='estatística descritiva').build(
         story, onFirstPage=footer, onLaterPages=footer)
 
 
 def export_notebook():
-    original = ROOT / 'notebooks/contribuicoes/02_amanda_executado.ipynb'
+    original = ROOT / 'notebooks/contribuicoes/02_estatistica_descritiva_executado.ipynb'
     notebook = nbformat.read(original, as_version=4)
     nbformat.validate(notebook)
     counts = [c.execution_count for c in notebook.cells if c.cell_type == 'code']
@@ -135,7 +135,7 @@ def export_notebook():
     assert not any(o.output_type == 'error' for c in notebook.cells
                    for o in c.get('outputs', []))
     # O nome contratado na integração recebe a versão efetivamente executada.
-    nbformat.write(notebook, ROOT / 'notebooks/contribuicoes/02_amanda.ipynb')
+    nbformat.write(notebook, ROOT / 'notebooks/contribuicoes/02_estatistica_descritiva.ipynb')
     story = []
     for cell in notebook.cells:
         if cell.cell_type == 'markdown':
@@ -171,8 +171,8 @@ def export_notebook():
                         story.append(Spacer(1, 8))
                     elif 'text/plain' in data:
                         story.append(Paragraph(escape(data['text/plain']), styles['SmallPT']))
-    build_pdf(OUT / 'amanda_secao_executada.pdf', story,
-              'Amanda - Seção executada do Trabalho 1 de Ciência de Dados')
+    build_pdf(OUT / 'secao_estatistica_descritiva.pdf', story,
+              'estatística descritiva - Seção executada do Trabalho 1 de Ciência de Dados')
 
 
 def export_document():
@@ -185,7 +185,7 @@ def export_document():
             story.append(PageBreak())
         story.extend(md_flow(part))
     build_pdf(OUT / 'roteiro_dreamshaper.pdf', story,
-              'Amanda - Roteiro e textos para o Dreamshaper')
+              'estatística descritiva - Roteiro e textos para o Dreamshaper')
 
 
 if __name__ == '__main__':

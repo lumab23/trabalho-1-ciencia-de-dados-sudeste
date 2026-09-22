@@ -183,7 +183,7 @@ def exportar(base, relatorio, raiz):
     relatorio["releitura"] = {"csv": "aprovada", "parquet": "aprovada"}
     relatorio["tipos_final"] = {c: str(t) for c, t in base.dtypes.items()}
     salvar_json(raiz / "outputs/reports/qualidade.json", relatorio)
-    linhas = ["# Relatório de qualidade — Luma / T326", "", f"Ano: {relatorio['ano_selecionado']}. Anos comuns: {relatorio['anos_comuns']}.",
+    linhas = ["# Relatório de qualidade — T326", "", f"Ano: {relatorio['ano_selecionado']}. Anos comuns: {relatorio['anos_comuns']}.",
               "", "## Registros por etapa", "", "| Etapa | Registros |", "|---|---:|"]
     linhas += [f"| {k} | {v} |" for k, v in relatorio["etapas"].items()]
     linhas += ["", "## Cobertura do Sudeste", "", "| UF | DTB fornecida | Base final |", "|---|---:|---:|"]

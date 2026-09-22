@@ -1,10 +1,10 @@
 # Roteiro e textos para o Dreamshaper
 
-Amanda - Trabalho 1 de Ciência de Dados - Universidade de Fortaleza
+estatística descritiva - Trabalho 1 de Ciência de Dados - Universidade de Fortaleza
 
 Este documento reúne a fala introdutória e os blocos de contextualização, objetivos,
 metodologia e contribuições para revisão da equipe. Os textos usam o recorte municipal
-do Sudeste em 2020 e a base preparada por Luma. Não foram publicados no Dreamshaper.
+do Sudeste em 2020 e a base preparada por preparação dos dados. Não foram publicados no Dreamshaper.
 
 ## Roteiro de aproximadamente 2 minutos e 30 segundos
 
@@ -14,7 +14,7 @@ tempo e os títulos dos blocos não fazem parte da fala.
 
 ### Slide 1 — Problema e objetivo — 0:00 a 0:35
 
-Olá, eu sou a Amanda. Nosso trabalho parte da pergunta: “O Brasil é um país desigual?”.
+Olá, eu sou a estatística descritiva. Nosso trabalho parte da pergunta: “O Brasil é um país desigual?”.
 Para investigar uma dimensão dessa questão, analisamos as diferenças de produção
 econômica entre os municípios do Sudeste. O objetivo social é tornar os dados públicos
 mais compreensíveis e contribuir para uma discussão informada sobre desigualdades
@@ -32,7 +32,7 @@ Brasileira fornece a identificação dos municípios. Todas essas fontes são do
 
 ### Slide 3 — Preparação e método — 1:15 a 2:00
 
-A Luma preparou a base utilizada nas análises. Ela padronizou os campos, cruzou os
+A preparação dos dados preparou a base utilizada nas análises. Ela padronizou os campos, cruzou os
 arquivos pelos códigos municipais, selecionou o Sudeste e conferiu a compatibilidade
 dos anos. Também converteu o PIB de mil reais para reais e calculou o PIB per capita,
 dividindo o PIB municipal pela população. A documentação não registra perdas no
@@ -48,7 +48,7 @@ Precisamos manter alguns cuidados. O PIB per capita representa produção por ha
 não a renda recebida por cada pessoa, e não revela sozinho a desigualdade dentro das
 cidades. A edição da base territorial não foi identificada, o que permanece como
 limitação. Além disso, nossos resultados se referem ao Sudeste em dois mil e vinte e
-não permitem concluir, isoladamente, sobre todo o Brasil. A seguir, a Luma detalha
+não permitem concluir, isoladamente, sobre todo o Brasil. A seguir, a preparação dos dados detalha
 a preparação dos dados.
 
 ## Blocos adaptáveis para o Dreamshaper
@@ -76,7 +76,7 @@ Descrever as diferenças de PIB total e PIB per capita entre os municípios do
 Sudeste em 2020, utilizando dados do IBGE e estatística descritiva, para contribuir
 para a compreensão de uma dimensão territorial da desigualdade econômica.
 
-### Objetivos específicos da contribuição de Amanda
+### Objetivos específicos da contribuição de estatística descritiva
 
 - Contextualizar a pergunta-guia e explicitar fontes, período, unidades e limites.
 - Calcular e interpretar medidas de tendência central e dispersão do PIB per capita.
@@ -95,18 +95,18 @@ dependem da confirmação de atividades e evidências pela equipe.
 ### Metodologia
 
 Estudo quantitativo, descritivo e transversal, baseado em dados secundários do IBGE.
-A unidade de análise é o município em 2020. A base tratada por Luma contém 1.668
+A unidade de análise é o município em 2020. A base tratada na etapa de preparação contém 1.668
 municípios do Sudeste: 78 no Espírito Santo, 853 em Minas Gerais, 92 no Rio de
 Janeiro e 645 em São Paulo. As fontes documentadas são as tabelas SIDRA 5938,
 para PIB municipal, e 6579, para estimativas populacionais, além da DTB, para
 identificação territorial. O ano de PIB e população foi identificado nos nomes
 originais dos arquivos. A edição da DTB permanece desconhecida.
 
-Luma realizou a padronização e os cruzamentos pelo código IBGE completo, converteu
+preparação dos dados realizou a padronização e os cruzamentos pelo código IBGE completo, converteu
 valores monetários de mil reais para reais e calculou PIB per capita como PIB total
 dividido pela população do mesmo ano. A documentação registra cobertura integral
 do recorte fornecido, sem exclusões por cálculo inválido ou valores ausentes na
-base final. A contribuição de Amanda utiliza essa base preservada e confere sua
+base final. A contribuição de estatística descritiva utiliza essa base preservada e confere sua
 cobertura e consistência antes das análises.
 
 As estatísticas municipais atribuem peso igual a cada município. Variância e desvio
@@ -124,13 +124,13 @@ a desigualdade de renda dentro dos municípios.
 
 Minha contribuição nesta entrega reúne a contextualização da pergunta-guia, a
 descrição das fontes e da metodologia e a análise descritiva do PIB per capita
-municipal. A partir da base preparada por Luma, foram produzidas as medidas
+municipal. A partir da base preparada por preparação dos dados, foram produzidas as medidas
 estatísticas, quatro rankings e um histograma, acompanhados de interpretações e
 conclusões parciais. A seção também diferencia a média simples dos municípios do
 PIB per capita regional e explicita as limitações dos indicadores. Integram a
 entrega o notebook executado, sua versão em PDF, tabelas em CSV, o gráfico em PNG,
 slides introdutórios e este roteiro. A preparação dos dados e a integração do
-trabalho são atribuições de Luma. Os textos para o Dreamshaper estão preparados
+trabalho são atribuições de preparação dos dados. Os textos para o Dreamshaper estão preparados
 para revisão, sem publicação.
 
 ### Informações que dependem de confirmação
@@ -151,8 +151,8 @@ Nenhuma publicação ou gravação é afirmada nesta entrega.
 
 ## Base documental
 
-Notebooks de preparação de Luma e arquivos do projeto: `data/processed/metadados.json`,
+Notebooks de preparação dos dados e arquivos do projeto: `data/processed/metadados.json`,
 `docs/dicionario_dados.md`, `outputs/reports/qualidade.md` e `qualidade.json`.
-Resultados conferidos em `notebooks/contribuicoes/02_amanda.ipynb`.
-O documento de divisão de tarefas fornecido por Amanda orienta a distribuição
+Resultados conferidos em `notebooks/contribuicoes/02_estatistica_descritiva.ipynb`.
+O documento de divisão de tarefas fornecido por estatística descritiva orienta a distribuição
 de responsabilidades da equipe.

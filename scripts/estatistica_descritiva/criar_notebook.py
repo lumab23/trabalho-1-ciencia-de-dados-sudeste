@@ -1,4 +1,4 @@
-"""Gera apenas a contribuição de Amanda; não executa o pipeline de preparação."""
+"""Gera apenas a contribuição de estatística descritiva; não executa o pipeline de preparação."""
 from pathlib import Path
 import textwrap
 import nbformat as nbf
@@ -17,7 +17,7 @@ def code(text):
 
 md('''
 # Trabalho 1 de Ciência de Dados
-## Amanda: contextualização e análise descritiva
+## estatística descritiva: contextualização e análise descritiva
 
 Universidade de Fortaleza - T326. Equipe: Luma, Amanda, Peter e Luís.
 
@@ -41,13 +41,13 @@ md('''
 A unidade de análise é **um município em 2020**. O recorte reúne Espírito Santo,
 Minas Gerais, Rio de Janeiro e São Paulo, conforme a DTB fornecida à equipe.
 
-| Fonte documentada por Luma | Arquivo original | Referência e uso |
+| Fonte documentada por preparação dos dados | Arquivo original | Referência e uso |
 |---|---|---|
 | IBGE/SIDRA, tabela 5938 | tabela5938_2020.csv.xz | 2020; PIB municipal |
 | IBGE/SIDRA, tabela 6579 | tabela6579_2020.csv.xz | 2020; estimativa de população residente |
 | Divisão Territorial Brasileira/IBGE | RELATORIO_DTB_BRASIL_MUNICIPIO.csv | Edição não informada; códigos, nomes e UFs |
 
-O ano de PIB e população foi identificado por Luma nos nomes originais, confirmados
+O ano de PIB e população foi identificado por preparação dos dados nos nomes originais, confirmados
 pelo título no Drive e por Content-Disposition. Os CSVs originais não trazem coluna
 de ano. A edição desconhecida da DTB impede afirmar equivalência histórica dos
 limites territoriais apenas pela correspondência de códigos.
@@ -64,9 +64,9 @@ auditorias intermediárias não estão nesta cópia do repositório; o tratament
 anterior é descrito a partir desses registros, sem alegar nova execução dessa etapa.
 ''')
 md('''
-## Preparação realizada por Luma
+## Preparação dos dados
 
-Luma inspecionou as fontes, leu inicialmente os campos como texto, padronizou
+A etapa de preparação inspecionou as fontes, leu inicialmente os campos como texto, padronizou
 nomes de variáveis e preservou o código IBGE completo de sete dígitos como chave.
 Converteu os campos monetários de mil reais para reais, multiplicando por 1.000,
 e realizou cruzamentos um para um pelo código municipal. O recorte territorial
@@ -76,13 +76,13 @@ O pipeline documentado interrompe a preparação quando encontra chaves inválid
 ou duplicadas. PIB ausente, negativo ou não finito e população ausente, não positiva,
 não inteira ou não finita inviabilizam o cálculo e são objeto de exclusão auditada,
 sem imputação. Impostos e valores adicionados foram preservados segundo as regras
-documentadas por Luma, mas não são analisados nesta seção.
+documentadas por preparação dos dados, mas não são analisados nesta seção.
 
-Luma calculou **PIB per capita = PIB total em reais / população em pessoas**, com
+A etapa de preparação calculou **PIB per capita = PIB total em reais / população em pessoas**, com
 PIB e população do mesmo ano. O relatório registra 5.570 linhas em cada fonte,
 3.902 municípios fora do recorte e 1.668 no Sudeste. Não houve perdas nos cruzamentos,
 exclusões por cálculo inválido, duplicatas, divergências de nomes ou valores ausentes
-na base final. A seguir, Amanda confere a base de consumo sem refazer a preparação.
+na base final. A seguir, A seção descritiva confere a base de consumo sem refazer a preparação.
 ''')
 code(r'''
 from pathlib import Path
@@ -100,13 +100,13 @@ from IPython.display import display, Markdown, HTML
 am_raiz = next((p for p in [Path.cwd(), *Path.cwd().parents]
     if (p / 'data/processed/metadados.json').is_file()), None)
 if am_raiz is None:
-    raise FileNotFoundError('Execute dentro do projeto com a base tratada da Luma.')
+    raise FileNotFoundError('Execute dentro do projeto com a base tratada da preparação dos dados.')
 am_entrada = am_raiz / 'data/processed/sudeste_municipios.parquet'
 am_hash_antes = hashlib.sha256(am_entrada.read_bytes()).hexdigest()
 am_dados = pd.read_parquet(am_entrada).copy(deep=True)
 am_meta = json.loads((am_raiz / 'data/processed/metadados.json').read_text())
 am_qualidade = json.loads((am_raiz / 'outputs/reports/qualidade.json').read_text())
-am_saida = am_raiz / 'outputs/amanda'
+am_saida = am_raiz / 'outputs/estatistica_descritiva'
 am_tabelas = am_saida / 'tabelas'
 am_figuras = am_raiz / 'outputs/figures'
 for am_pasta in [am_saida, am_tabelas, am_figuras]:
@@ -376,12 +376,12 @@ with plt.rc_context({'font.size': 11, 'axes.spines.top': False,
     am_fig.suptitle(f'n = {len(am_positivos):,}'.replace(',', '.') +
         f' municípios; {len(am_freq)} classes; não positivos fora do log: {am_nao_positivos}',
         x=0.07, ha='left', fontsize=10)
-    am_fig.savefig(am_figuras / 'amanda_histograma_pib_per_capita.png', dpi=200)
+    am_fig.savefig(am_figuras / 'histograma_pib_per_capita.png', dpi=200)
     plt.show()
     plt.close(am_fig)
 am_acima100 = int((am_x > 100000).sum())
 am_moda_classe = int(am_freq.argmax())
-display(Markdown(f'Fonte: base tratada por Luma, com PIB e população IBGE de 2020. '
+display(Markdown(f'Fonte: base tratada na etapa de preparação, com PIB e população IBGE de 2020. '
     f'Foram representados **{len(am_positivos)} municípios**, com **{am_nao_positivos} '
     'valores válidos não positivos fora do log**.\n\n'
     f'A classe mais frequente contém **{int(am_freq[am_moda_classe])} municípios**, '
@@ -417,8 +417,8 @@ causais. Isso exigiria outras regiões, indicadores e estratégias de investiga�
 O estudo representa um único ano, usa população estimada e valores correntes e
 preserva a limitação territorial da DTB sem edição identificada.
 
-Esta é uma contribuição parcial de Amanda. A preparação é de Luma. Análises
-setoriais, correlações e comparações econômicas por UF cabem a Peter; boxplot,
+Esta é uma contribuição parcial de estatística descritiva. A preparação é de preparação dos dados. Análises
+setoriais, correlações e comparações econômicas por UF cabem a análises econômicas; boxplot,
 curtose, medidas de assimetria e conclusão geral não são executados aqui.
 ''')
 md('''
@@ -476,30 +476,30 @@ am_relatorio = {'status': 'aprovado', 'ano': 2020, 'n': len(am_x),
         ['pandas', 'numpy', 'pyarrow', 'matplotlib', 'nbformat', 'nbclient', 'ipykernel']}}
 (am_saida / 'conferencia.json').write_text(
     json.dumps(am_relatorio, ensure_ascii=False, indent=2), encoding='utf-8')
-print('Conferências aprovadas. Base preservada. Resultados em outputs/amanda.')
+print('Conferências aprovadas. Base preservada. Resultados em outputs/estatistica_descritiva.')
 ''')
 md('''
 ## Referências e pendências
 
 IBGE. PIB dos Municípios, tabela SIDRA 5938. Arquivo de 2020 fornecido à equipe,
-identificado nos metadados de Luma. https://sidra.ibge.gov.br/tabela/5938
+identificado nos metadados de preparação dos dados. https://sidra.ibge.gov.br/tabela/5938
 
 IBGE. Estimativas da população, tabela SIDRA 6579. Arquivo de 2020 fornecido à equipe,
-identificado nos metadados de Luma. https://sidra.ibge.gov.br/tabela/6579
+identificado nos metadados de preparação dos dados. https://sidra.ibge.gov.br/tabela/6579
 
 IBGE. Divisão Territorial Brasileira. Arquivo fornecido à equipe, edição não
-informada. As páginas são referências institucionais documentadas por Luma;
+informada. As páginas são referências institucionais documentadas por preparação dos dados;
 não foram usadas para atualizar ou substituir a base.
 
-Luma. Preparação dos dados do Trabalho 1, notebook e documentação presentes no
+preparação dos dados. Preparação dos dados do Trabalho 1, notebook e documentação presentes no
 repositório. Registro de entrega datado de 08/09/2026.
 
-Equipe. Divisão do Trabalho 1, documento de planejamento fornecido por Amanda.
+Equipe. Divisão do Trabalho 1, documento de planejamento fornecido por estatística descritiva.
 Seu escopo foi usado como contexto; não autoriza publicação, gravação ou execução
 das responsabilidades dos demais integrantes.
 
 **Pendências:** confirmar a edição da DTB se essa informação puder ser recuperada;
-revisar e integrar a seção com Luma; confirmar campos e limites do Dreamshaper.
+revisar e integrar a seção com preparação dos dados; confirmar campos e limites do Dreamshaper.
 Ações extensionistas, público atendido, datas, participantes externos e impactos
 dependem de evidências da equipe e não são afirmados nesta entrega.
 ''')
@@ -507,9 +507,9 @@ dependem de evidências da equipe e não são afirmados nesta entrega.
 notebook = nbf.v4.new_notebook(cells=cells, metadata={
     'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
     'language_info': {'name': 'python'},
-    'authors': [{'name': 'Amanda'}],
+    'authors': [{'name': 'estatística descritiva'}],
 })
 nbf.validate(notebook)
-destination = ROOT / 'notebooks/contribuicoes/02_amanda.ipynb'
+destination = ROOT / 'notebooks/contribuicoes/02_estatistica_descritiva.ipynb'
 nbf.write(notebook, destination)
 print(destination)

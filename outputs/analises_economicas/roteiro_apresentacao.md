@@ -1,4 +1,4 @@
-# Roteiro de Peter — aproximadamente 2min30s
+# Roteiro de análises econômicas — aproximadamente 2min30s
 
 Use os cinco slides em ordem. Os tempos são uma referência para ensaio, não uma duração garantida. No vídeo coletivo, esta fala corresponde aproximadamente a 5:00–7:30.
 
@@ -20,7 +20,7 @@ Use os cinco slides em ordem. Os tempos são uma referência para ensaio, não u
 
 ## Slide 5 — 2:00 a 2:30
 
-“A matriz resume as associações entre as variáveis. PIB e população têm correlação de 0,985 nos valores originais. Precisamos lembrar que os setores compõem o PIB e que PIB por habitante usa PIB e população no próprio cálculo. Os resultados mostram disparidades territoriais de produção dentro do Sudeste, sem medir diretamente a desigualdade de renda das pessoas. Agora o Luís apresenta a distribuição e a síntese do grupo.”
+“A matriz resume as associações entre as variáveis. PIB e população têm correlação de 0,985 nos valores originais. Precisamos lembrar que os setores compõem o PIB e que PIB por habitante usa PIB e população no próprio cálculo. Os resultados mostram disparidades territoriais de produção dentro do Sudeste, sem medir diretamente a desigualdade de renda das pessoas. Agora o distribuição e síntese apresenta a distribuição e a síntese do grupo.”
 
 ## Se o professor perguntar
 

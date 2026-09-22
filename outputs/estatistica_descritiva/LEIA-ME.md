@@ -1,23 +1,23 @@
-# Entrega de Amanda
+# Entrega de estatística descritiva
 
 Trabalho 1 de Ciência de Dados, T326, Universidade de Fortaleza.
 Municípios do Sudeste, ES, MG, RJ e SP, com PIB e população de 2020.
 
 ## Arquivos principais
 
-- `../../notebooks/contribuicoes/02_amanda.ipynb`: notebook executado, no caminho
-  previsto pelo manifesto de integração de Luma.
-- `amanda_secao_executada.pdf`: exportação das células, códigos, tabelas, gráfico
+- `../../notebooks/contribuicoes/02_estatistica_descritiva.ipynb`: notebook executado, no caminho
+  previsto pelo manifesto de integração.
+- `secao_estatistica_descritiva.pdf`: exportação das células, códigos, tabelas, gráfico
   e interpretações do notebook executado.
 - `tabelas/`: quatro rankings, estatísticas e tabelas auxiliares em CSV.
-- `../figures/amanda_histograma_pib_per_capita.png`: histograma em alta resolução.
-- `amanda_introducao_metodologia.pptx`: quatro slides introdutórios editáveis,
+- `../figures/histograma_pib_per_capita.png`: histograma em alta resolução.
+- `introducao_metodologia.pptx`: quatro slides introdutórios editáveis,
   com notas do apresentador e referências documentais.
 - `roteiro_dreamshaper.pdf`: roteiro de aproximadamente 2min30s e blocos para revisão.
 - `roteiro_dreamshaper.md`: versão editável do mesmo documento em Markdown.
 - `conferencia.json`: verificações numéricas, hash da base e versões das bibliotecas.
 - `conferencia_slides.json`: verificações estruturais do PowerPoint.
-- `entrega_amanda.zip`: pacote de entrega com a estrutura relativa do projeto.
+- `entrega_estatistica_descritiva.zip`: pacote de entrega com a estrutura relativa do projeto.
 
 ## Tabelas
 
@@ -50,7 +50,7 @@ O notebook passou pela execução sequencial em kernel novo e pela conferência
 independente com `statistics`, interpolação de quartis, soma de totais e ordenação
 de rankings. CSV e Parquet foram comparados numericamente. A contagem do histograma
 fecha com a base e o hash do Parquet permaneceu inalterado. Os arquivos originais
-do projeto e de Luma não foram modificados.
+do projeto não foram modificados.
 
 Os PDFs foram renderizados e inspecionados. A estrutura do PPTX foi validada e os
 quatro slides foram renderizados pelo Quick Look do macOS para inspeção visual.
@@ -59,26 +59,26 @@ textos e tabela nativos, não imagens achatadas de slides.
 
 ## Integração e reprodução
 
-Luma deve usar `notebooks/contribuicoes/02_amanda.ipynb`, já indicado no
+A integração deve usar `notebooks/contribuicoes/02_estatistica_descritiva.ipynb`, já indicado no
 `integracao.json`. Os nomes globais da seção recebem o prefixo `am_` para reduzir
 conflitos na integração. Nenhum arquivo original deve ser substituído para usar
 a contribuição. O notebook encontra a raiz por caminhos relativos e lê o Parquet.
 
 Além das dependências existentes do projeto, instale `matplotlib`. As versões
 efetivamente utilizadas estão em `conferencia.json`. A execução desta entrega usou
-Python 3.9.6 em ambiente isolado local; a preparação de Luma não foi reexecutada.
+Python 3.9.6 em ambiente isolado local; a preparação dos dados não foi reexecutada.
 
 Com o ambiente do projeto ativado, execute a partir da raiz:
 
 ```bash
-PYTHONPATH=src python -m sudeste.notebook notebooks/contribuicoes/02_amanda.ipynb
+PYTHONPATH=src python -m sudeste.notebook notebooks/contribuicoes/02_estatistica_descritiva.ipynb
 ```
 
-O executor existente gera `02_amanda_executado.ipynb` e HTML em `outputs/reports/`.
-As tabelas e a figura são regravadas apenas nos caminhos de Amanda. O notebook
+O executor existente gera `02_estatistica_descritiva_executado.ipynb` e HTML em `outputs/reports/`.
+As tabelas e a figura são regravadas apenas nos caminhos de estatística descritiva. O notebook
 contém os próprios cálculos e textos e não depende dos scripts de autoria para rodar.
 O pacote ZIP deve ser extraído sobre a raiz de uma cópia do projeto que já contenha
-a base tratada e seus metadados; ele não duplica os dados de Luma.
+a base tratada e seus metadados; ele não duplica os dados de preparação dos dados.
 
 ## Pendências
 
@@ -86,10 +86,10 @@ a base tratada e seus metadados; ele não duplica os dados de Luma.
 - Confirmar os campos efetivos e limites de caracteres do Dreamshaper.
 - Confirmar ações extensionistas, público, participantes, datas e impactos apenas
   quando houver informações e evidências da equipe.
-- Revisar com a equipe e integrar a seção com Luma e os slides com Luís.
+- Revisar com a equipe e integrar a seção com preparação dos dados e os slides com distribuição e síntese.
 - Ensaiar a fala para ajustar as pausas e o tempo real.
 
-Os arquivos brutos e as auditorias intermediárias completas de Luma não estão
+Os arquivos brutos e as auditorias intermediárias completas não estão
 nesta cópia do repositório. A descrição da preparação baseia-se nos notebooks,
 metadados e relatórios disponíveis. Não houve publicação no Dreamshaper, gravação
-de vídeo ou execução das análises de Peter e Luís.
+de vídeo ou execução das análises econômicas e da síntese final.

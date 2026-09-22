@@ -15,6 +15,17 @@ data/processed/*
 !data/processed/sudeste_municipios.parquet
 outputs/figures/*
 !outputs/figures/.gitkeep
+!outputs/figures/histograma_pib_per_capita.png
+!outputs/figures/comparacao_estados.png
+!outputs/figures/composicao_estados.png
+!outputs/figures/correlacao_log10.png
+!outputs/figures/correlacao_original.png
+!outputs/figures/dispersao_pib_populacao.png
+!outputs/figures/participacoes_pib_populacao.png
+!outputs/figures/va_setores_sudeste.png
+outputs/analises_economicas/tabelas/
+outputs/analises_economicas/resultados.json
+notebooks/contribuicoes/03_analises_economicas_executado.ipynb
 outputs/reports/*
 !outputs/reports/.gitkeep
 !outputs/reports/qualidade.json

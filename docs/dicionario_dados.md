@@ -37,5 +37,5 @@ ao contrato de consumo da equipe.
 Consulte [SIDRA 5938](https://sidra.ibge.gov.br/tabela/5938) para o conceito detalhado
 de impostos e atividades e antes de somar serviços e administração pública. O projeto
 mantém a correspondência exata com os rótulos recebidos; não calcula participações
-setoriais, atribuição de Peter. Não confunda reais correntes com reais constantes,
+setoriais, que pertencem à análise posterior. Não confunda reais correntes com reais constantes,
 nem PIB por habitante com renda individual.

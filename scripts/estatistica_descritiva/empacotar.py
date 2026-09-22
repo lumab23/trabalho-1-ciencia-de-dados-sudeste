@@ -1,4 +1,4 @@
-"""Valida os artefatos finais e empacota a contribuição, sem copiar a base de Luma."""
+"""Valida os artefatos finais e empacota a contribuição, sem copiar a base de preparação dos dados."""
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 import hashlib
@@ -11,8 +11,8 @@ import fitz
 from lxml import etree
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'outputs/amanda'
-nb = nbformat.read(ROOT / 'notebooks/contribuicoes/02_amanda.ipynb', 4)
+OUT = ROOT / 'outputs/estatistica_descritiva'
+nb = nbformat.read(ROOT / 'notebooks/contribuicoes/02_estatistica_descritiva.ipynb', 4)
 nbformat.validate(nb)
 code = [c for c in nb.cells if c.cell_type == 'code']
 assert [c.execution_count for c in code] == list(range(1, len(code) + 1))
@@ -26,7 +26,7 @@ for name in ['top5_pib_total_reais', 'bottom5_pib_total_reais',
     table = pd.read_csv(OUT / 'tabelas' / (name + '.csv'))
     assert len(table) == 5
     assert not table[['municipio', 'uf', 'valor', 'unidade']].isna().any().any()
-pdf = fitz.open(OUT / 'amanda_secao_executada.pdf')
+pdf = fitz.open(OUT / 'secao_estatistica_descritiva.pdf')
 pdf_text = '\n'.join(p.get_text() for p in pdf)
 for expected in ['30.364,89', '22.531,00', '44.406,19', '101,62',
                  'Louveira', 'Francisco Badaró', 'Serra da Saudade',
@@ -41,7 +41,7 @@ for page in pdf:
         assert rect.x0 >= 0 and rect.y0 >= 0
         assert rect.x1 <= page.rect.width + 1 and rect.y1 <= page.rect.height + 1
 
-with ZipFile(OUT / 'amanda_introducao_metodologia.pptx') as z:
+with ZipFile(OUT / 'introducao_metodologia.pptx') as z:
     slides = [n for n in z.namelist() if re.fullmatch(r'ppt/slides/slide\d+\.xml', n)]
     assert len(slides) == 4
     for name in z.namelist():
@@ -60,17 +60,17 @@ final = {'status': 'aprovado', 'python': sys.version.split()[0],
 (OUT / 'validacao_final.json').write_text(json.dumps(final, ensure_ascii=False, indent=2))
 files = [p for p in OUT.rglob('*') if p.is_file() and p.suffix != '.zip'
          and p.name != 'manifesto_sha256.json']
-files += [ROOT / 'notebooks/contribuicoes/02_amanda.ipynb',
-          ROOT / 'outputs/figures/amanda_histograma_pib_per_capita.png',
-          ROOT / 'scripts/amanda/requirements-analise.txt']
+files += [ROOT / 'notebooks/contribuicoes/02_estatistica_descritiva.ipynb',
+          ROOT / 'outputs/figures/histograma_pib_per_capita.png',
+          ROOT / 'scripts/estatistica_descritiva/requirements-analise.txt']
 manifest = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sorted(files)}
 (OUT / 'manifesto_sha256.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2))
 files.append(OUT / 'manifesto_sha256.json')
-with ZipFile(OUT / 'entrega_amanda.zip', 'w', ZIP_DEFLATED) as z:
+with ZipFile(OUT / 'entrega_estatistica_descritiva.zip', 'w', ZIP_DEFLATED) as z:
     for p in sorted(files):
         z.write(p, str(p.relative_to(ROOT)))
-with ZipFile(OUT / 'entrega_amanda.zip') as z:
+with ZipFile(OUT / 'entrega_estatistica_descritiva.zip') as z:
     assert z.testzip() is None
     for p, checksum in manifest.items():
         assert hashlib.sha256(z.read(p)).hexdigest() == checksum

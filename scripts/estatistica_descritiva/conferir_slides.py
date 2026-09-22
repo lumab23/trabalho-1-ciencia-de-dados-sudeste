@@ -6,8 +6,8 @@ import json
 from lxml import etree
 
 ROOT = Path(__file__).resolve().parents[2]
-PPTX = ROOT / 'outputs/amanda/amanda_introducao_metodologia.pptx'
-BUILD = ROOT / 'tmp/amanda/slides_qa'
+PPTX = ROOT / 'outputs/estatistica_descritiva/introducao_metodologia.pptx'
+BUILD = ROOT / 'tmp/estatistica_descritiva/slides_qa'
 BUILD.mkdir(parents=True, exist_ok=True)
 NS = {'p': 'http://schemas.openxmlformats.org/presentationml/2006/main',
       'a': 'http://schemas.openxmlformats.org/drawingml/2006/main'}
@@ -54,10 +54,10 @@ for index in range(1, 5):
         encoding='UTF-8', standalone=True)
     save(BUILD / f'slide_{index}.pptx', single)
 
-geometry = json.loads((ROOT / 'tmp/amanda/slides_geometry.json').read_text())
+geometry = json.loads((ROOT / 'tmp/estatistica_descritiva/slides_geometry.json').read_text())
 assert all(g['x'] >= 0 and g['y'] >= 0 and g['x'] + g['w'] <= 13.334
            and g['y'] + g['h'] <= 7.5 for g in geometry)
 evidence['text_boxes_inside_slide'] = True
-(ROOT / 'outputs/amanda/conferencia_slides.json').write_text(
+(ROOT / 'outputs/estatistica_descritiva/conferencia_slides.json').write_text(
     json.dumps(evidence, ensure_ascii=False, indent=2), encoding='utf-8')
 print(json.dumps(evidence, ensure_ascii=False))

@@ -41,9 +41,9 @@ substituíram fontes e não se inferiu equivalência histórica de limites munic
 
 ## Pendências da equipe
 
-Amanda, Peter e Luís ainda precisam entregar suas análises e notebooks reais.
+estatística descritiva, análises econômicas e distribuição e síntese ainda precisam entregar suas análises e notebooks reais.
 `integracao.json` e `src/sudeste/integracao.py` preparam a reunião posterior das
 contribuições. O procedimento foi testado com fixtures explicitamente artificiais,
 sem criar resultados econômicos. Não há notebook final da equipe, slides, vídeo
-ou PDF final. Luma deverá revisar a integração e executar o conjunto completo após
+ou PDF final. A integração deverá revisar a integração e executar o conjunto completo após
 receber as contribuições.
