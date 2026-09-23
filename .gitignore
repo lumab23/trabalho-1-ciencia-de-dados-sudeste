@@ -23,6 +23,8 @@ outputs/figures/*
 !outputs/figures/dispersao_pib_populacao.png
 !outputs/figures/participacoes_pib_populacao.png
 !outputs/figures/va_setores_sudeste.png
+!outputs/figures/boxplots_distribuicao.png
+!outputs/figures/boxplot_pib_per_capita_por_uf.png
 outputs/analises_economicas/tabelas/
 outputs/analises_economicas/resultados.json
 notebooks/contribuicoes/03_analises_economicas_executado.ipynb

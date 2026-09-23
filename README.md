@@ -46,3 +46,22 @@ curtose e uma conclusão geral apoiada nas evidências encontradas.
 
 O resultado final deve discutir as desigualdades econômicas, populacionais e regionais
 do Sudeste, deixando claras as fontes, unidades, escolhas metodológicas e limitações.
+
+## Execução do notebook consolidado
+
+Depois de criar e ativar o ambiente virtual, instale as dependências e execute:
+
+```bash
+python -m pip install -r requirements.txt
+PYTHONPATH=src python -m sudeste.notebook notebooks/00_trabalho_integrado.ipynb
+```
+
+Caso o notebook consolidado ainda não exista, crie-o antes da execução com:
+
+```bash
+PYTHONPATH=src python -m sudeste.integracao
+```
+
+A integração preserva os notebooks individuais e não sobrescreve uma consolidação
+existente. O executor grava a versão executada ao lado do arquivo original e uma
+versão HTML em `outputs/reports/`.
